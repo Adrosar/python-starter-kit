@@ -1,5 +1,5 @@
 
-# Python Starter Kit 0.1.0
+# Python Starter Kit 0.2.0
 
 ## Info
 
@@ -81,6 +81,20 @@ venv/bin/python app
 _(aplikacja znajduje się w katalogu `app`)_
 
 
+### Konfiguracja VCS _(Linux)_
+
+Plik `.vscode/settings.json` który znajduje się w repozytorium jest przeznaczony dla systemu **Windows**. Jeżeli chcesz aby konfiguracja działała poprawnie w systemie **Linux** to musisz skorzystać z poniższej konfiguracji:
+
+```
+{
+    "python.pythonPath": "venv/bin/python",
+    "python.linting.pep8Enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true
+}
+```
+
+
 ## Zadania
 
 **[1]** Zadania są obsługiwane przy pomocy programu [Invoke](http://www.pyinvoke.org)
@@ -107,5 +121,5 @@ invoke clean
 **[3.2]** Uruchamianie zadań w systemie Linux _(Linux Lite 4.4, Ubuntu 18.04.2 LTS)_:
 
 ```
-venv/Scripts/invoke clean
+venv/bin/invoke clean
 ```
