@@ -1,10 +1,20 @@
 
-# Python Starter Kit 0.2.0
+# Python Starter Kit 0.3.0
 
 ## Info
 
 Projekt jest paczką dla tworzenia nowych aplikacji w języku **Python 3.6+**
-i jest dostosowane dla edytora [Visual Studio Code](https://code.visualstudio.com) _(ver. [1.35](https://code.visualstudio.com/updates/v1_35) )_
+i jest dostosowane dla edytora [Visual Studio Code](https://code.visualstudio.com) _(ver. [1.40](https://code.visualstudio.com/updates/v1_40) )_ i wtyczki **Python**:
+
+```
+Name: Python
+Id: ms-python.python
+Description: Linting, Debugging (multi-threaded, remote), Intellisense, code formatting, refactoring, unit tests, snippets, and more.
+Version: 2019.9.34911
+Publisher: Microsoft
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-python.python
+```
+_( ↑ w dniu 01.XII.2019 najnowsza wersja nie chiała działać poprawnie, więc polecam starszą )_
 
 
 ## Wymagania
@@ -24,19 +34,13 @@ i jest dostosowane dla edytora [Visual Studio Code](https://code.visualstudio.co
 python -m venv venv
 ```
 
-**[3]** Zainstaluj narzędzia deweloperskie, polecenie:
+**[3]** Zainstaluj zależności z pliku `requirements.txt`:
 
 ```
-"venv/Scripts/python.exe" -m pip install -r requirements_dev.txt
+"venv\Scripts\python.exe" -m pip install -r requirements.txt
 ```
 
-**[4]** Zainstaluj moduły których aplikacja potrzebuje do pracy, polecenie:
-
-```
-"venv/Scripts/python.exe" -m pip install -r requirements_prod.txt
-```
-
-**[5]** Teraz możesz uruchomić aplikację poleceniem:
+**[4]** Teraz możesz uruchomić aplikację poleceniem:
 
 ```
 "venv\Scripts\python.exe" app
@@ -61,19 +65,13 @@ sudo apt-get install python3-pip
 python3 -m venv venv
 ```
 
-**[3]** Zainstaluj narzędzia deweloperskie, polecenie:
+**[3]** Zainstaluj zależności z pliku `requirements.txt`:
 
 ```
-venv/bin/python -m pip install -r requirements_dev.txt
+venv/bin/python -m pip install -r requirements.txt
 ```
 
-**[4]** Zainstaluj moduły których aplikacja potrzebuje do pracy, polecenie:
-
-```
-venv/bin/python -m pip install -r requirements_prod.txt
-```
-
-**[5]** Teraz możesz uruchomić aplikację poleceniem:
+**[4]** Teraz możesz uruchomić aplikację poleceniem:
 
 ```
 venv/bin/python app
@@ -83,16 +81,12 @@ _(aplikacja znajduje się w katalogu `app`)_
 
 ### Konfiguracja VCS _(Linux)_
 
-Plik `.vscode/settings.json` który znajduje się w repozytorium jest przeznaczony dla systemu **Windows**. Jeżeli chcesz aby konfiguracja działała poprawnie w systemie **Linux** to musisz skorzystać z poniższej konfiguracji:
+Plik `.vscode/settings.json` który znajduje się w repozytorium jest przeznaczony dla systemu **Windows**. Jeżeli chcesz aby konfiguracja działała poprawnie w systemie **Linux** to musisz zamienić format ścieżek dla folderów i plików.
 
-```
-{
-    "python.pythonPath": "venv/bin/python",
-    "python.linting.pep8Enabled": true,
-    "python.linting.flake8Enabled": true,
-    "python.linting.mypyEnabled": true
-}
-```
+Format **Windows** → `folder1\\folder2\\plik.txt`
+Format **Linux**  → `folder1/folder2/plik.txt`
+
+Zamieniamy `\\` na `/` (dotyczy się to tylko pliku JSON)
 
 
 ## Zadania
@@ -101,16 +95,16 @@ Plik `.vscode/settings.json` który znajduje się w repozytorium jest przeznaczo
 
 **[2]** Plik `./tasks.py` zawiera definicje zadań.
 
-**[3.1]** Zadanie uruchamiamy prze polecenie (Windows 10):
+**[3.1]** Zadanie uruchamiamy przez polecenie _(Windows 10)_:
 
 ```
-"venv/Scripts/invoke.exe" clean
+"venv\Scripts\invoke.exe" clean
 ```
 
 Objaśnienie _(legenda)_:
 
-`"venv/Scripts/invoke.exe"` - lokalizacja pliku wykonywalnego aplikacji **invoke**
-`clean` - przykładowa nazwa zadania zdefiniowanego w pliku `./tasks.py`
+`"venv\Scripts\invoke.exe"` - lokalizacja pliku wykonywalnego aplikacji **invoke**
+`clean` - przykładowa nazwa zadania zdefiniowanego w pliku `tasks.py`
 
 Można zastosować też skróconą wersję **(tylko Windows 10)**:
 
