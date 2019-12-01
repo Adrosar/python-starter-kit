@@ -1,6 +1,23 @@
 {
-    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "python.analysis.cacheFolderPath": "${workspaceFolder}\\cache",
+    "python.pythonPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",
+    "python.linting.enabled": true,
     "python.linting.pep8Enabled": true,
+    "python.linting.pep8Path": "${workspaceFolder}\\venv\\Scripts\\pep8.exe",
     "python.linting.flake8Enabled": true,
-    "python.linting.mypyEnabled": true
+    "python.linting.flake8Path": "${workspaceFolder}\\venv\\Scripts\\flake8.exe",
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyPath": "${workspaceFolder}\\venv\\Scripts\\mypy.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "${workspaceFolder}\\venv\\Scripts\\pylint.exe",
+    "python.linting.prospectorEnabled": false,
+    "python.jediEnabled": true,
+    "python.jediPath": "${workspaceFolder}\\venv\\Lib\\site-packages",
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Path": "${workspaceFolder}\\venv\\Scripts\\autopep8.exe",
+    "python.autoComplete.addBrackets": true,
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}\\venv\\Lib",
+        "${workspaceFolder}\\app"
+    ]
 }
